@@ -82,6 +82,18 @@
     </properties>
 
     <repositories>
+        <!-- 添加阿里云镜像 -->
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>sonatype-releases</id>
             <url>http://oss.sonatype.org/content/repositories/releases/</url>
@@ -121,6 +133,12 @@
                     <version>${cas.version}</version>
                     <type>war</type>
                     <scope>runtime</scope>
+                </dependency>
+                <!-- 添加ldap支持 -->
+                <dependency>
+                    <groupId>org.apereo.cas</groupId>
+                    <artifactId>cas-server-support-ldap</artifactId>
+                    <version>${cas.version}</version>
                 </dependency>
                 <!--
                 ...Additional dependencies may be placed here...
